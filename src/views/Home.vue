@@ -68,14 +68,14 @@
 		</vue3-simple-html2pdf>
 		<div v-if="submitted" class="row justify-content-center">
 			<div class="col-lg-4 col-md-6 col-12">
-				<button @click="exportPdf()">export</button>
+				<button @click="exportPdf()">Download PDF</button>
 			</div>
 		</div>
 		<div v-if="!submitted" class="row justify-content-center">
 			<div class="col-lg-4 col-md-6 col-12">
 				<div class="row mt-5">
 					<div class="col">
-						<span> TITLE </span>
+						<span> Vehicle VIN/Plate Code Generator </span>
 					</div>
 				</div>
 				<div class="row">
@@ -112,7 +112,7 @@
 		</div>
 		<div v-if="!submitted" class="row justify-content-center">
 			<div class="col-lg-4 col-md-6 col-12">
-				<button @click="handleSubmit()">Submit</button>
+				<button @click="handleSubmit()">Generate</button>
 			</div>
 		</div>
 	</div>
@@ -148,7 +148,7 @@
 						orientation: "p",
 					},
 				},
-				exportFilename: "my-custom-file.pdf",
+				// exportFilename: "test.pdf"
 			};
 		},
 		computed() {
@@ -157,8 +157,11 @@
 		methods: {
 			async handleSubmit() {
 				this.submitted = true;
+				this.licensePlate = this.licensePlate.toUpperCase();
+				this.vinCode= this.vinCode.toUpperCase();
 				JsBarcode("#code128", this.licensePlate);
 				this.qrCodeUrl = this.qrCodeUrl + this.vinCode;
+				this.exportFilename= this.licensePlate + ".pdf";
 			},
 			exportPdf() {
 				// window.print();
@@ -187,7 +190,6 @@
 				// let base64Image = $("#qr_code img").attr("src");
 
 				// pdf.addImage(base64Image, "png", 0, 0, 40, 40);
-
 				this.$refs.vue3SimpleHtml2pdf.download();
 			},
 		},
