@@ -129,8 +129,8 @@
 				countryCode: "DE",
 				dspCode: "DSHP",
 				stationCode: "DBE2",
-				licensePlate: "123123",
-				vinCode: "123123",
+				licensePlate: "",
+				vinCode: "",
 				submitted: false,
 
 				qrCodeUrl: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=",
