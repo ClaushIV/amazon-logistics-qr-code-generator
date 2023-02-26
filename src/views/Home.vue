@@ -148,7 +148,7 @@
 						orientation: "p",
 					},
 				},
-				// exportFilename: this.licensePlate + ".pdf",
+				exportFilename: this.licensePlate + ".pdf",
 			};
 		},
 		computed() {
@@ -189,7 +189,6 @@
 				// pdf.addImage(base64Image, "png", 0, 0, 40, 40);
 
 				this.$refs.vue3SimpleHtml2pdf.download();
-				this.exportFilename= this.licensePlate + "pdf";
 			},
 		},
 	};
