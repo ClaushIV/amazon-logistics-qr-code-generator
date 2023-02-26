@@ -67,52 +67,52 @@
 			</div>
 		</vue3-simple-html2pdf>
 		<div v-if="submitted" class="row justify-content-center">
-			<div class="col">
+			<div class="col-lg-4 col-md-6 col-12">
 				<button @click="exportPdf()">export</button>
 			</div>
 		</div>
 		<div v-if="!submitted" class="row justify-content-center">
-			<div class="col-4 col-md-6 col-xs-12">
-				<div class="row">
+			<div class="col-lg-4 col-md-6 col-12">
+				<div class="row mt-5">
 					<div class="col">
-						<span> baslik </span>
+						<span> TITLE </span>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<label> Country Code: </label>
+						<label style="text-align: left"> Country Code: </label>
 						<input v-model="countryCode" type="text" maxlength="2" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<label> DSP Code: </label>
+						<label style="text-align: left"> DSP Code: </label>
 						<input v-model="dspCode" type="text" maxlength="4" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<label> Station Code: </label>
+						<label style="text-align: left"> Station Code: </label>
 						<input v-model="stationCode" type="text" maxlength="4" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<label> License Plate: </label>
+						<label style="text-align: left"> License Plate: </label>
 						<input v-model="licensePlate" type="text" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<label> VIN Code: </label>
+						<label style="text-align: left"> VIN Code: </label>
 						<input v-model="vinCode" type="text" maxlength="17" />
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<button @click="handleSubmit()">Submit</button>
-					</div>
-				</div>
+			</div>
+		</div>
+		<div v-if="!submitted" class="row justify-content-center">
+			<div class="col-lg-4 col-md-6 col-12">
+				<button @click="handleSubmit()">Submit</button>
 			</div>
 		</div>
 	</div>
@@ -131,7 +131,7 @@
 				stationCode: "DBE2",
 				licensePlate: "123123",
 				vinCode: "123123",
-				submitted: true,
+				submitted: false,
 
 				qrCodeUrl: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=",
 
