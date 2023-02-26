@@ -148,7 +148,7 @@
 						orientation: "p",
 					},
 				},
-				exportFilename: this.licensePlate + ".pdf",
+				exportFilename: "my-custom-file.pdf",
 			};
 		},
 		computed() {
