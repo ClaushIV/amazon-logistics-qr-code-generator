@@ -1,4 +1,6 @@
-# amazon-vin-code-scanner
+# Amazon Logistics VIN Code Scanner
+
+### Generates a QR code and barcode for the car to make DA's life easier.
 
 ## Project setup
 ```
@@ -14,6 +16,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
